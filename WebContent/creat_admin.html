@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+
+<Center>Registation</Center><br><br>
+<form action="AdminRegistration" method="post" align="center">
+User Type<select name="user">
+<option value="admin" selected>Admin</option>
+<option value="office">Office</option>
+</select><br><br>
+User Name:<input type="text" name="user_name"  value=""><br><br>
+Password:<input type="password" name="password" id="txtPassword"  value=""><br><br>
+Confirm Password:<input type="password" id="txtConfirmPassword" value=""><br><br>
+<input type="submit" id="btnSubmit" value="Registration">
+</form>
+
+
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $("#btnSubmit").click(function () {
+                var password = $("#txtPassword").val();
+                var confirmPassword = $("#txtConfirmPassword").val();
+                if (password != confirmPassword) {
+                    alert("Passwords do not match.");
+                    return false;
+                }
+                return true;
+            });
+        });
+    </script>
+
+
+</body>
+</html>
